@@ -2,7 +2,7 @@ import { useState } from 'react';
 import styles from './searchBar.module.css'
 
 export default function SearchBar(props) {
-   const {onSearch} = props
+   const {onSearch, random} = props
    const [id, setId] = useState('')
 
    const handleChange = (e) => {
@@ -13,11 +13,13 @@ export default function SearchBar(props) {
       )
    }
 
-
+ 
    return (
       <div className={styles.searchBar}>
          <input type='search' value={id} onChange={handleChange}/>
          <button onClick={() => onSearch(id)}>Agregar</button>
+         <button onClick={random}>Random</button>
+
       </div>
    );
 }

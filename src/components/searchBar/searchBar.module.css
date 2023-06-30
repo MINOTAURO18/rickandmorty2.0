@@ -1,0 +1,17 @@
+.searchBar{
+    display: flex;
+    gap: 10px;
+}
+
+.searchBar input{
+    width: 150px;
+    height: 30px;
+    border-radius: 5px;
+}
+
+.searchBar button{
+    width: 80px;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+}

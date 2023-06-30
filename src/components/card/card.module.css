@@ -1,7 +1,7 @@
 .card {
     position: relative;
     width: 300px;
-    height: 400px;
+    height: 350px;
     border: 1px solid black;
     border-radius: 10px;
     display: flex;
@@ -14,7 +14,9 @@
 .card img{
     width: 100%;
     height: auto;
-    border-radius: 0 0 10px 10px;
+    border-radius: 10px 10px 0 0;
+    position: absolute;
+    top: 0;
 }
 
 .card button{
@@ -25,5 +27,22 @@
     right: 5px;
     top: 5px;
     border-radius: 50%;
-    border: 1px solid #b1abab;
+    border: none;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+    font-size: 17px;
+    color: rgb(23, 22, 22);
 }
+
+.card button:hover{
+    background-color: rgb(177, 6, 46);
+    color: antiquewhite;
+
+}
+
+h2{
+    position: absolute;
+    bottom: 0;
+    margin: 10px 0;
+}
+

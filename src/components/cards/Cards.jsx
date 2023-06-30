@@ -11,7 +11,6 @@ export default function Cards({characters, onClose}) {
             id={char.id}
             key={char.id}
             name={char.name}
-            status={char.status}
             image={char.image}
             onClose={onClose}
           />
