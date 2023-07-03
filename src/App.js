@@ -3,16 +3,20 @@ import './App.css';
 import Cards from './components/cards/Cards';
 import Nav from './components/nav/Nav';
 import axios from 'axios';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation} from 'react-router-dom';
 import About from './components/about/About';
 import Detail from './components/detail/Detail';
 import Error from './components/error/Error';
-
+import Form from './components/form/Form';
 
 
 function App() {
 
    const [characters, setCharacters] = useState([]) 
+
+   
+
+   const location = useLocation()
 
    const searchHandler = (id) => {
       axios(`https://rickandmortyapi.com/api/character/${id}`).then(({ data }) => {
@@ -58,8 +62,11 @@ function App() {
 
    return (
       <div className='App'>
-         <Nav onSearch={searchHandler} random={randomHandler}/>
+         {
+           location.pathname === '/' ? null : <Nav onSearch={searchHandler} random={randomHandler}/>
+         }
          <Routes>
+            <Route path='/' element={<Form/>}/>
             <Route path='/home'  element={<Cards characters={characters} onClose={closeHandler} />}/>
             <Route path='/about'  element={<About/>}/>
             <Route path='/detail/:id'  element={<Detail/>}/>

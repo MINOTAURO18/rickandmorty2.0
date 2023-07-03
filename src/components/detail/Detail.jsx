@@ -19,13 +19,13 @@ const Detail = () => {
     }, [id])
 
     return (
-        <div key={character.id}>
-           <h2>{character.name}</h2>
-           <h2>{character.status}</h2>
-           <h2>{character.species}</h2>
-           <h2>{character.gender}</h2>
-           <h2>{character.origin?.name}</h2>
-           <img src={character.image} alt="" />
+        <div  className={styles.detail}>
+           <h3>{character.name}</h3>
+           <h3>{character.status}</h3>
+           <h3>{character.species}</h3>
+           <h3>{character.gender}</h3>
+           <h3>{character.origin?.name}</h3>
+           <img src={character.image} alt={character.name} />
         </div>
     )
 
