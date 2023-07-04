@@ -3,7 +3,7 @@ import './App.css';
 import Cards from './components/cards/Cards';
 import Nav from './components/nav/Nav';
 import axios from 'axios';
-import { Routes, Route, useLocation} from 'react-router-dom';
+import { Routes, Route, useLocation, useNavigate} from 'react-router-dom';
 import About from './components/about/About';
 import Detail from './components/detail/Detail';
 import Error from './components/error/Error';
@@ -14,9 +14,28 @@ function App() {
 
    const [characters, setCharacters] = useState([]) 
 
-   
+   const [acces, setAcces] = useState(false)
+
+   let EMAIL = 'prueba@gmail.com';
+   let PASSWORD = 'prueba1'
+
+
+   const login = (userData) => {
+      
+      if (userData.password === PASSWORD && userData.email === EMAIL) {
+         setAcces(true)
+         navigate('/home')
+      }
+   }
+
+   const logOut = () => {
+         setAcces(false)
+         navigate('/')
+   }
 
    const location = useLocation()
+
+   const navigate = useNavigate()
 
    const searchHandler = (id) => {
       axios(`https://rickandmortyapi.com/api/character/${id}`).then(({ data }) => {
@@ -63,10 +82,10 @@ function App() {
    return (
       <div className='App'>
          {
-           location.pathname === '/' ? null : <Nav onSearch={searchHandler} random={randomHandler}/>
+           location.pathname === '/' ? null : <Nav onSearch={searchHandler} random={randomHandler} logOut={logOut}/>
          }
          <Routes>
-            <Route path='/' element={<Form/>}/>
+            <Route path='/' element={<Form login={login}/>}/>
             <Route path='/home'  element={<Cards characters={characters} onClose={closeHandler} />}/>
             <Route path='/about'  element={<About/>}/>
             <Route path='/detail/:id'  element={<Detail/>}/>

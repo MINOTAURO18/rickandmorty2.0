@@ -2,7 +2,10 @@ import SearchBar from '../searchBar/SearchBar'
 import styles from './nav.module.css'
 import { Link } from 'react-router-dom'
 
-const Nav = ({onSearch, random}) => {
+const Nav = ({onSearch, random, logOut}) => {
+
+  
+   
     return (
         <nav className={styles.nav}>
           <div className={styles.links}>
@@ -14,6 +17,8 @@ const Nav = ({onSearch, random}) => {
           <Link to='/home'>
             Home
           </Link>
+
+          <button onClick={() => logOut()}>Log Out</button>
           </div>
           <SearchBar onSearch={onSearch} random={random}/>
         </nav>
