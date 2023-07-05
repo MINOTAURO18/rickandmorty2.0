@@ -68,7 +68,9 @@ const Form = ({login}) => {
                 />
                 <p>{errors.password}</p>
 
-                <button type='submit'>Ingresar</button>
+
+               <button className={!errors.email && !errors.password ? styles.buttonTrue : styles.btn}>Ingresar</button>
+
             </form>
         </section>
     )
