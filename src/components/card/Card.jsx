@@ -4,7 +4,9 @@ import { connect } from "react-redux";
 import { addFav, removeFav } from "../../redux/actions";
 import { useState, useEffect } from "react";
 
-function Card({ id, name, status, species, gender, origin, image, onClose, removeFav, addFav, favorites}) {
+function Card(props) {
+  const {character, onClose, addFav, removeFav, favorites} = props;
+  const {image, name,  id} = character
   
   const [isFav, setIsFav] = useState(false)
 
@@ -35,15 +37,12 @@ function Card({ id, name, status, species, gender, origin, image, onClose, remov
       </NavLink>
       {
    isFav ? (
-      <button className={styles.fav} onClick={() => handleFavorite(id)}>❤️</button>
+      <button className={styles.fav} onClick={() => handleFavorite(character.id)}>❤️</button>
    ) : (
-      <button className={styles.fav} onClick={() => handleFavorite(id)}>🤍</button>
+      <button className={styles.fav} onClick={() => handleFavorite(character)}>🤍</button>
    )
 }
-      <h2>{status}</h2>
-      <h2>{species}</h2>
-      <h2>{gender}</h2>
-      <h2>{origin}</h2>
+     
     </div>
   );
 }
