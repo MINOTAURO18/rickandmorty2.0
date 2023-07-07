@@ -4,7 +4,7 @@ let initialState = {
   myFavorites: [],
 };
 
-const rootReducer = (state = initialState, actions) => {
+export default function rootReducer (state = initialState, actions){
   const { type, payload } = actions;
   switch (type) {
     case ADD_FAV:
@@ -15,7 +15,7 @@ const rootReducer = (state = initialState, actions) => {
 
     case REMOVE_FAV:
       let removeFavorite = state.myFavorites.filter(
-        (remove) => remove.id !== payload
+        (remove) => remove.id !== Number(payload)
       );
       return {
         ...state,

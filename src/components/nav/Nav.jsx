@@ -18,6 +18,10 @@ const Nav = ({onSearch, random, logOut}) => {
             Home
           </Link>
 
+          <Link to='/favorites'>
+            Favorites
+          </Link>
+
           <button onClick={() => logOut()}>Log Out</button>
           </div>
           <SearchBar onSearch={onSearch} random={random}/>

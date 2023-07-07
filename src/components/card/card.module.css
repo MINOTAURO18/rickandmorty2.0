@@ -18,7 +18,7 @@
     top: 0;
 }
 
-.card button{
+.card .close{
     background-color: rgb(255, 0, 60);
     width: 30px;
     height: 30px;
@@ -33,7 +33,7 @@
     color: rgb(23, 22, 22);
 }
 
-.card button:hover{
+.card .close:hover{
     background-color: rgb(177, 6, 46);
     color: antiquewhite;
 
@@ -60,6 +60,15 @@
     background:linear-gradient(
         0deg, rgba(0, 255, 76, 0.6),  rgba(0, 255, 76, 0.6)
     ) ;
+}
+
+.card .fav{
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
