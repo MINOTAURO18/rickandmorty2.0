@@ -90,7 +90,7 @@ function App() {
             <Route path='/home'  element={<Cards characters={characters} onClose={closeHandler} />}/>
             <Route path='/about'  element={<About/>}/>
             <Route path='/detail/:id'  element={<Detail/>}/>
-            <Route path='/favorites' element={<Favorites/>}/>
+            <Route path='/favorites' element={<Favorites onClose={closeHandler} characters={characters}/>}/>
             <Route path='*' element={<Error/>}/>
          </Routes>
          

@@ -63,6 +63,11 @@
 }
 
 .card .fav{
+    color: wheat;
+    font-size: 24px;
+    background: none;
+    width: 30px;
+    height: 28px;
     position: absolute;
     left: 5px;
     top: 5px;
