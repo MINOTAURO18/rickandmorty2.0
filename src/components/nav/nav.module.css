@@ -1,7 +1,6 @@
 .nav{
     z-index: 9;
-    position: sticky;
-    top: 0;
+    position: fixed;
     background-color: rgb(22, 21, 21);
     width: 100%;
     height: 10vh;
@@ -28,4 +27,37 @@ a, button{
 .nav .links{
   display: flex;
   gap: 20px;
+}
+
+.mobile{
+  display: none;
+}
+
+@media (width < 850px) {
+  .nav .links{
+    display: none;
+  }
+  .nav{
+    justify-content: center;
+  }
+  .mobile{
+    z-index: 9;
+    background-color: aquamarine;
+    position: absolute;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  .mobile a{
+    background:none;
+  }
+
+  .mobile a img{
+    width: 35px;
+  }
 }

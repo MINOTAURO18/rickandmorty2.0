@@ -1,13 +1,12 @@
 import { connect}  from "react-redux";
 import Cards from "../cards/Cards";
 
-const Favorites = (props) => {
-    const {characters, onClose, favorites}= props
-    const {id} = characters
+const Favorites = ({favorites}) => {
+    
 
     return (
         <div>
-            <Cards characters={favorites} onClose={() =>onClose(id)} />
+            <Cards characters={favorites}  />
         </div>
     )
 }
