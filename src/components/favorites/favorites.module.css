@@ -1,0 +1,14 @@
+.favoritos {
+    width: 100%;
+    min-height: 90vh;
+    padding: 15vh 10vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.select{
+    display: flex;
+    gap: 15px;
+}

@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import './App.css';
+import { useDispatch } from 'react-redux';
+import { removeFav } from './redux/actions';
 import Cards from './components/cards/Cards';
 import Nav from './components/nav/Nav';
 import axios from 'axios';
@@ -19,6 +21,7 @@ function App() {
 
    let EMAIL = 'prueba@gmail.com';
    let PASSWORD = 'prueba1'
+   const dispatch = useDispatch()
 
 
    const login = (userData) => {
@@ -51,6 +54,8 @@ function App() {
 
    const  closeHandler = (id) => {
       let deleted = characters.filter(character => character.id !== Number(id))
+
+      dispatch(removeFav(id))
 
       setCharacters(deleted)
    }
