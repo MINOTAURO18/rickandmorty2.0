@@ -43,7 +43,11 @@ function App() {
 
    const searchHandler = (id) => {
       axios(`http://localhost:3001/rickandmorty/character/${id}`).then(({ data }) => {
-         if (data.name) {
+         const char = characters?.find(element => element.id === Number(data.id))
+         if(char){
+            alert('this character is already in the list')
+         }
+         else if (data.name) {
             setCharacters((oldChars) => [...oldChars, data]);
             
          } else {
