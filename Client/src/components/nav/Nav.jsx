@@ -4,7 +4,6 @@ import { Link, NavLink } from 'react-router-dom'
 import logoHome from '../../assets/Inicio.svg'
 import logoSalir from '../../assets/salir.svg'
 import logoAbout from '../../assets/sobremi.svg'
-import logoRandom from '../../assets/random.svg'
 import logoCora from '../../assets/corazon.svg'
 
 

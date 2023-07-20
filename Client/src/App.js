@@ -19,17 +19,18 @@ function App() {
 
    const [acces, setAcces] = useState(false)
 
-   let EMAIL = 'prueba@gmail.com';
-   let PASSWORD = 'prueba1'
+   
    const dispatch = useDispatch()
 
 
-   const login = (userData) => {
-      
-      if (userData.password === PASSWORD && userData.email === EMAIL) {
-         setAcces(true)
-         navigate('/home')
-      }
+   function login(userData) {
+      const { email, password } = userData;
+      const URL = 'http://localhost:3001/rickandmorty/login/';
+      axios(URL + `?email=${email}&password=${password}`).then(({ data }) => {
+         const { access } = data;
+         setAcces(data);
+         access && navigate('/home');
+      });
    }
 
    const logOut = () => {
